@@ -1,0 +1,2 @@
+class Faketweet < ApplicationRecord
+end

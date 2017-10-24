@@ -1,0 +1,2 @@
+module FaketweetsHelper
+end

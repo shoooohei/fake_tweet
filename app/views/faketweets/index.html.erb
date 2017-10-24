@@ -1,0 +1,36 @@
+<% stylesheet_link_tag "faketweets.css" %>
+
+<body>
+  <div class="container">
+    <nav>
+      <ul class="gloval_menu clearfix">
+        <li>ホーム</li>
+        <li>モーメント</li>
+        <li>通知</li>
+        <li>メッセージ</li>
+      </ul>
+    </nav>
+    <%= form_with(model: Faketweet.new, local: true) do |form| %>
+    <div class = "tweet">
+      <%= form.text_area :content, value: "つぶやく" %>
+      <%= form.submit "つぶやく", 
+          data: { confirm: "投稿しますか？"} %>
+    </div>
+    <% end %>
+    <div class="content">
+      <ul>
+        <% @alltweet.each do |tweet| %>
+          <li><%= tweet.created_at.strftime("%Y年%m月%d") %></li>
+          <li><%= tweet.content %></li>
+          <li><br></li>
+          <li><%= link_to "編集する", edit_faketweet_path(tweet.id) %>
+              <%= link_to "削除する", faketweet_path(tweet.id),
+              data: { confirm: "本当に削除してよろしいですか？"},
+              method: :delete %></li>
+          <li><br></li>
+          <li><br></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</body>
