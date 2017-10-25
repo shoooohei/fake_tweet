@@ -3,6 +3,7 @@ class FaketweetsController < ApplicationController
   
   def index
     @alltweet = Faketweet.order(created_at: :desc)
+    # @faketweet = 
   end
   
   def new
@@ -14,6 +15,7 @@ class FaketweetsController < ApplicationController
      if @faketweet.save
       redirect_to faketweets_path, notice: "新しくつぶやきました"
      else
+      @alltweet = Faketweet.order(created_at: :desc)
       render "index"
      end
   end
@@ -31,7 +33,6 @@ class FaketweetsController < ApplicationController
   
   def destroy
     @faketweet.destroy
-    # @alltweet = Faketweet.order(created_at: :desc) 
     redirect_to faketweets_path, notice: "削除できました"
   end
     

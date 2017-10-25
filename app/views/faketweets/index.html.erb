@@ -10,6 +10,8 @@
         <li>メッセージ</li>
       </ul>
     </nav>
+     
+        
     <%= form_with(model: Faketweet.new, local: true) do |form| %>
     <div class = "tweet">
       <%= form.text_area :content, value: "つぶやく" %>
