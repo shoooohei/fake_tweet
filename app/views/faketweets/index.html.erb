@@ -5,8 +5,10 @@
     <%= form_with(model: Faketweet.new, local: true) do |form| %>
     <div class="row">
       <%= form.text_area :content, value: "いまどうしてる？", class: "col-md-12" %><br>
-      <%= form.submit "つぶやく",
-          data: { confirm: "投稿しますか？"}, class: "label label-primary" %>
+      <div class="col-md-offset-10 col-md-2">
+        <%= form.submit "つぶやく",
+            data: { confirm: "投稿しますか？"}, class: "label label-primary" %>
+      </div>
     </div>
     <% end %>
     <div class="content">
