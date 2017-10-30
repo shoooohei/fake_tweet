@@ -26,11 +26,11 @@ li {
   clear: both;
 }
 
-.content {
-  /*width: 500px;*/
-  /*margin: 0 auto;*/
+/*.content {
+  width: 500px;
+  margin: 0 auto;
   background-color: #fff
-}
+}*/
 
 .content li{
   padding-left: 20px;
