@@ -18,10 +18,13 @@
         </aside>
       </div>
       <div class="col-sm-8">
-        <%= form_with(model: Faketweet.new, local: true) do |form| %>
-          <%= form.text_area :content, value: "いまどうしてる？" %><br>
-          <%= form.submit "ツイート",
-                data: { confirm: "投稿しますか？"} %>
+        <div class="row">
+          <%= form_with(model: Faketweet.new, local: true) do |form| %>
+            <%= form.text_area :content, value: "いまどうしてる？" class: "col-xs-12" %><br>
+            <%= form.submit "ツイート",
+                  data: { confirm: "投稿しますか？"},
+                  class: "col-xs-offset-10 col-xs-2" %>
+        </div>
         <% end %>
         <div class="content">
           <ul>
