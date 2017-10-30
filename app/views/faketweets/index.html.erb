@@ -2,27 +2,48 @@
 
 <body>
   <div class="container">
-    <%= form_with(model: Faketweet.new, local: true) do |form| %>
     <div class="row">
-      <%= form.text_area :content, value: "いまどうしてる？", class: "col-md-12" %><br>
-        <%= form.submit "つぶやく",
-            data: { confirm: "投稿しますか？"}, class: "col-md-offset-10 col-md-2" %>
-    </div>
-    <% end %>
-    <div class="content">
-      <ul>
-        <% @alltweet.each do |tweet| %>
-          <li><%= tweet.created_at.strftime("%Y年%m月%d") %></li>
-          <li><%= tweet.content %></li>
-          <li><br></li>
-          <li><%= link_to "編集する", edit_faketweet_path(tweet.id) %>
-              <%= link_to "削除する", faketweet_path(tweet.id),
-              data: { confirm: "本当に削除してよろしいですか？"},
-              method: :delete %></li>
-          <li><br></li>
-          <li><br></li>
+      <div class="col-md-4">
+        <aside>
+          <h3>shohei kawasaki</h3>
+          <p>@0317shohei</p>
+          <p>プログラミング勉強中</p>
+          <p>2010年5月に登録</p>
+          <div class="recommended_user">
+            <h3>おすすめユーザー</h3>
+          </div>
+          <div class="recommended_trend">
+            <h3>おすすめトレンド</h3>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-8">
+        <%= form_with(model: Faketweet.new, local: true) do |form| %>
+        <div class="row">
+          <%= form.text_area :content, value: "いまどうしてる？" %><br>
+          <%= form.submit "つぶやく",
+                data: { confirm: "投稿しますか？"} %>
+        </div>
         <% end %>
-      </ul>
+        <div class="content">
+          <ul>
+            <% @alltweet.each do |tweet| %>
+              <li><%= tweet.created_at.strftime("%Y年%m月%d") %></li>
+              <li><%= tweet.content %></li>
+              <li><br></li>
+              <li><%= link_to "編集する", edit_faketweet_path(tweet.id) %>
+                  <%= link_to "削除する", faketweet_path(tweet.id),
+                  data: { confirm: "本当に削除してよろしいですか？"},
+                  method: :delete %></li>
+              <li><br></li>
+              <li><br></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
+
+
+
   </div>
 </body>
