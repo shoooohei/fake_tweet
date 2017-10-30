@@ -2,20 +2,10 @@
 
 <body>
   <div class="container">
-    <nav>
-      <ul class="gloval_menu clearfix">
-        <li>ホーム</li>
-        <li>モーメント</li>
-        <li>通知</li>
-        <li>メッセージ</li>
-      </ul>
-    </nav>
-     
-        
     <%= form_with(model: Faketweet.new, local: true) do |form| %>
     <div class = "tweet">
       <%= form.text_area :content, value: "つぶやく" %>
-      <%= form.submit "つぶやく", 
+      <%= form.submit "つぶやく",
           data: { confirm: "投稿しますか？"} %>
     </div>
     <% end %>
