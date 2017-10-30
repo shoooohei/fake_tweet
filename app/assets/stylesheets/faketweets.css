@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-  
+
   width: 890px;
 }
 
@@ -29,7 +29,7 @@ li {
 .content {
   width: 500px;
   margin: 0 auto;
-  background-color: #fff
+  background-color: #ffff00
 }
 
 .content li{
