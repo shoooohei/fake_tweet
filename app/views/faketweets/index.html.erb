@@ -3,10 +3,10 @@
 <body>
   <div class="container">
     <%= form_with(model: Faketweet.new, local: true) do |form| %>
-    <div class = "tweet">
-      <%= form.text_area :content, value: "つぶやく" %>
+    <div class="row">
+      <%= form.text_area :content, value: "いまどうしてる？", class: "col-md-12" %><br>
       <%= form.submit "つぶやく",
-          data: { confirm: "投稿しますか？"} %>
+          data: { confirm: "投稿しますか？"}, class: "label label-primary" %>
     </div>
     <% end %>
     <div class="content">
