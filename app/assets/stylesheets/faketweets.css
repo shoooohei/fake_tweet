@@ -2,10 +2,10 @@ body {
   background-color: #E5ECF0;
 }
 
-.container {
+/*.container {
 
   width: 890px;
-}
+}*/
 
 li {
   list-style: none;
@@ -27,11 +27,11 @@ li {
 }
 
 .content {
-  width: 500px;
-  margin: 0 auto;
+  /*width: 500px;*/
+  /*margin: 0 auto;*/
   background-color: #fff
 }
 
 .content li{
-  margin-left: 20px;
+  padding-left: 20px;
 }

@@ -3,7 +3,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-sm-4">
         <aside>
           <h3>shohei kawasaki</h3>
           <p>@0317shohei</p>
@@ -17,7 +17,7 @@
           </div>
         </aside>
       </div>
-      <div class="col-md-8">
+      <div class="col-sm-8">
         <%= form_with(model: Faketweet.new, local: true) do |form| %>
           <%= form.text_area :content, value: "いまどうしてる？" %><br>
           <%= form.submit "つぶやく",
