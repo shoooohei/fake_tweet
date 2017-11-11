@@ -1,35 +1,43 @@
+.cover {
+  background-color: #18A2F9;
+  height: 100px;
+
+}
+
 body {
   background-color: #E5ECF0;
 }
-
-/*.container {
-
-  width: 890px;
-}*/
 
 li {
   list-style: none;
 }
 
-/*.gloval_menu li{
-  float: left;
-  text-decoration: none;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top:17px;
-  padding: 0;
-}*/
-
-/*.clearfix:after{
-  content: "";
-  display: block;
-  clear: both;
-}*/
-
-.content {
-  margin-top: 0 auto;
+textarea {
+  color:#BAC7D0;
+  border-color: #BFE8FF;
+  border-width: 3px;
 }
 
-.content li{
-  padding-left: 50px;
+.tweet {
+  margin: 10px;
+}
+
+.content{
+  background-color: #fff;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 50px;
+  height: 100%;
+}
+
+.profile_image {
+  margin-left: 10px
+}
+
+.each_tweet {
+  padding-left: 0px;
+}
+
+.past_tweet {
+  margin-top: 40px;
 }

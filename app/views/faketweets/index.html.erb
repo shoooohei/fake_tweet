@@ -1,50 +1,31 @@
-<% stylesheet_link_tag "faketweets.css" %>
 
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <aside>
-          <h3>shohei kawasaki</h3>
-          <p>@0317shohei</p>
-          <p>プログラミング勉強中</p>
-          <p>2010年5月に登録</p>
-          <div class="recommended_user">
-            <h3>おすすめユーザー</h3>
-          </div>
-          <div class="recommended_trend">
-            <h3>おすすめトレンド</h3>
-          </div>
-        </aside>
-      </div>
-      <div class="col-sm-8">
-        <div class="row">
-          <%= form_with(model: Faketweet.new, local: true) do |form| %>
-            <%= form.text_area :content, value: "いまどうしてる？" class: "col-xs-12" %><br>
-            <%= form.submit "ツイート",
-                  data: { confirm: "投稿しますか？"},
-                  class: "col-xs-offset-10 col-xs-2" %>
-        </div>
-        <% end %>
-        <div class="content">
-          <ul>
-            <% @alltweet.each do |tweet| %>
-              <li><%= tweet.created_at.strftime("%Y年%m月%d") %></li>
-              <li><%= tweet.content %></li>
-              <li><br></li>
-              <li><%= link_to "編集する", edit_faketweet_path(tweet.id) %>
-                  <%= link_to "削除する", faketweet_path(tweet.id),
-                  data: { confirm: "本当に削除してよろしいですか？"},
-                  method: :delete %></li>
-              <li><br></li>
-              <li><br></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-
-
+<div class="row">
+  <%= form_with(model: Faketweet.new, local: true) do |form| %>
+  <div class="tweet">
+    <%= form.text_area :content, rows: 5, value: "いまどうしてる？", class: "col-xs-offset-1 col-xs-10" %>
   </div>
-</body>
+  <br>
+  <%= form.submit "ツイート",
+          data: { confirm: "投稿しますか？"},
+          class: "btn btn-default" %>
+  <% end %>
+</div>
+
+<div class="past_tweet row">
+  <hr style="border:0;border-top:1px solid #E5ECF0;">
+  <% @alltweet.each do |tweet| %>
+    <div class="col-xs-2">
+      <%= image_tag 'profile.png', width:'70', class:'profile_image' %>
+    </div>
+    <div class="each_tweet col-xs-10">
+      <p><%= tweet.created_at.strftime("%Y年%m月%d") %></p>
+      <p><%= tweet.content %></p>
+      <p><br></p>
+      <p><%= link_to "編集する", edit_faketweet_path(tweet.id), class: 'btn btn-primary' %>
+          <%= link_to "削除する", faketweet_path(tweet.id),
+          data: { confirm: "本当に削除してよろしいですか？"},
+          method: :delete, class: 'btn btn-danger' %></p>
+      <hr style="border:0;border-top:1px solid #E5ECF0;">
+    </div>
+  <% end %>
+</div>

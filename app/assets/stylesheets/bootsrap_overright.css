@@ -2,6 +2,29 @@
   background-color: #fff
 }
 
-.col-sm-8 {
-  background-color: #fff
+.btn-default {
+  color: #fff;
+  background-color: #1AB4FA;
+  border-color: transparent;
+  position: absolute;
+  top: 110px;
+  right: 50px
+}
+
+.btn-default:hover {
+  color: #fff;
+  background-color: #1878F9;
+  border-color: transparent;
+}
+
+.btn-success {
+  color: #fff;
+  border-color: transparent;
+  position: absolute;
+  top: 110px;
+  right: 150px;
+}
+
+.navbar{
+  margin-bottom: 0px;
 }
