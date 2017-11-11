@@ -2,6 +2,15 @@
 
 
 <div class="row">
+  <% if @faketweet.errors.any? %>
+    <div class="error_explanation">
+      <ul>
+        <% @faketweet.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= form_with(model: @faketweet, local: true) do |form| %>
     <div class="tweet">
       <%= form.text_area :content, rows: 5,
